@@ -52,3 +52,30 @@ This project utilizes an AI model to classify news headlines into one of five bi
 - **Evaluation Metrics**: F1 Score, Mean Squared Error (MSE)
   
 ---
+## Testing the Program
+
+1. **Install Dependencies**: Ensure all dependencies are installed:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Retrieve Model File**: The model file is tracked by Git LFS. To download it, first install and initialize Git LFS, then run:
+
+   ```bash
+   git lfs pull
+   ```
+
+4. **Run the Application**: Start the chatbot by executing:
+
+   ```bash
+   python app.py
+   ```
+
+6. **Input a Headline**: Once the chatbot starts, input a news headline to receive the analysis.
+   
+   ```plaintext
+   Enter a news headline (or type 'quit' to exit): 
+   ```
+
+---
