@@ -72,7 +72,7 @@ This project utilizes an AI model to classify news headlines into one of five bi
    python app.py
    ```
 
-6. **Input a Headline**: Once the chatbot starts, input a news headline to receive the analysis.\Example:
+6. **Input a Headline**: Once the chatbot starts, input a news headline to receive the analysis.<br>Example:
    
    ```plaintext
    Enter a news headline (or 'quit' to exit): 
