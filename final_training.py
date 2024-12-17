@@ -131,8 +131,8 @@ if num_removed > 0:
 else:
     print("Perfect, Nothing removed")
 
-# PREPARING THE DATASET
 
+# PREPARING THE DATASET
 
 def compute_sample_weight(regression_labels):
     weight = 1.0
@@ -157,9 +157,8 @@ sample_weights = np.array([
     for label in y_regression
 ])
 
+
 # Split data into training and test sets
-
-
 def weight_conversion(weight):
     if weight == 3.0:
         return 'weight_3'
@@ -186,8 +185,8 @@ X_train, X_test, y_train_regression, y_test_regression, y_train_multi_label, y_t
 print(f"Training samples: {len(X_train)}")
 print(f"Testing samples: {len(X_test)}")
 
-# dataset and loader
 
+# dataset and loader
 
 class HeadlineDataset(Dataset):
     def __init__(self, headlines, labels_regression, labels_multi_label, weights, tokenizer, max_len):
@@ -233,7 +232,7 @@ tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 MAX_LEN = 183
 BATCH_SIZE = 16  # Adjust based on your hardware capabilities
 EPOCHS = 16  # Could expand to a larger number if you want to train more
-# theoretically could be lower but for speed we kept it on higher end
+# theoretically could be lower, but kept on higher end for speed
 LEARNING_RATE = 0.000125
 
 train_dataset = HeadlineDataset(
@@ -276,7 +275,7 @@ class HeadlineScoreModel(nn.Module):
 
 
 # SETUP FOR TRAINING
-# utilizing CUda is not necessary do to the lack of gpu (trained on M1 macbook )
+# utilizing CUda is not necessary due to lack of GPU on laptop
 device = torch.device("cpu")
 
 print(f"Using device: {device}")
@@ -289,8 +288,7 @@ loss_fn_regression = nn.MSELoss(reduction='none').to(device)
 loss_fn_classification = nn.BCEWithLogitsLoss(reduction='none').to(device)
 
 # Checkpoint Loading
-# essential for being able to pause training between epochs without causing an error
-# training took over 4 days so this had a HUGE role
+# Can pause training between epochs without causing error
 
 
 def load_latest_checkpoint(save_dir, model, optimizer):
@@ -349,8 +347,9 @@ def train_epoch(model, dataloader, loss_fn_regression, loss_fn_classification, o
         optimizer.step()
 
     return np.mean(losses)
-# Eval Function during trading
 
+
+# Eval Function during trading
 
 def eval_model(model, dataloader, loss_fn_regression, loss_fn_classification, device):
     model.eval()

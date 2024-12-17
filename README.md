@@ -75,7 +75,7 @@ This project utilizes an AI model to classify news headlines into one of five bi
 6. **Input a Headline**: Once the chatbot starts, input a news headline to receive the analysis.
    
    ```plaintext
-   Enter a news headline (or type 'quit' to exit): 
+   Enter a news headline (or 'quit' to exit): 
    ```
 
 ---

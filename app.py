@@ -70,7 +70,7 @@ def predict_headline(model, tokenizer, category_names, headline, device, max_len
     return regression_results, classification_results
 
 
-# Function to load model and tokenizer
+# Load model and tokenizer
 def load_model():
     model_path = 'model/distilbert_news_classifier_epoch16.pth'
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -95,13 +95,12 @@ def analyze_headline(headline, model, tokenizer, category_names, device):
             headline=headline,
             device=device
         )
-        # Handle
+        # Handle scores out of range
         if regression_results['Sentiment'] < 0:
             regression_results['Sentiment'] = 0
         if regression_results['Intensity'] > 10:
             regression_results['Intensity'] = 10
 
-        # Format the output
         output = f"""📊 Analysis Results:
 
 Metrics:

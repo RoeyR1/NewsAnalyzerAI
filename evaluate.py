@@ -9,7 +9,6 @@ import json
 import os
 from tqdm import tqdm
 
-
 from final_training import HeadlineScoreModel, HeadlineDataset
 from app import predict_headline
 
