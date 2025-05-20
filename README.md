@@ -5,6 +5,14 @@ This project utilizes an AI model to classify news headlines into one of five bi
 
 ---
 
+## Tools & Libraries
+
+- **Data Handling**: Hugging Face, Pandas
+- **Model Training**: PyTorch
+- **Evaluation Metrics**: F1 Score, Mean Squared Error (MSE)
+
+---
+
 ## Features
 
 - **Binary Categorization**: Headlines classified into one or more of the following categories:
@@ -43,15 +51,9 @@ This project utilizes an AI model to classify news headlines into one of five bi
   
 - **Scaled Scoring**:
   - Mean Squared Error (MSE) averages approximately **0.3**, with all values below **0.4** and many around **0.27**.
-
-
-## Tools & Libraries
-
-- **Data Handling**: Hugging Face, Pandas
-- **Model Training**: TensorFlow/PyTorch
-- **Evaluation Metrics**: F1 Score, Mean Squared Error (MSE)
   
 ---
+
 ## Testing the Program
 
 1. **Install Dependencies**: Ensure all dependencies are installed:
